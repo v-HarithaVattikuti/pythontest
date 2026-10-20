@@ -10,14 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Uninstall Python 3.14.4 arm64
+      - name: Uninstall Python 3.14.8 arm64
         shell: pwsh
         run: |
-          $exe = 'c:\hostedtoolcache\windows\Python\3.14.4\arm64\python-3.14.4-arm64.exe'
+          $exe = 'c:\hostedtoolcache\windows\Python\3.14.8\arm64\python-3.14.8-arm64.exe'
           if (Test-Path $exe) {
             Start-Process -FilePath $exe -ArgumentList @('/uninstall', '/quiet') -Wait
           }
-          $dir = 'c:\hostedtoolcache\windows\Python\3.14.4'
+          $dir = 'c:\hostedtoolcache\windows\Python\3.14.8'
           if (Test-Path $dir) {
             Remove-Item -Recurse -Force $dir
           }
@@ -46,14 +46,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       
-      - name: Uninstall Python 3.14.4 arm64
+      - name: Uninstall Python 3.14.8 arm64
         shell: pwsh
         run: |
-          $exe = 'c:\hostedtoolcache\windows\Python\3.14.4\arm64\python-3.14.4-arm64.exe'
+          $exe = 'c:\hostedtoolcache\windows\Python\3.14.8\arm64\python-3.14.8-arm64.exe'
           if (Test-Path $exe) {
             Start-Process -FilePath $exe -ArgumentList @('/uninstall', '/quiet') -Wait
           }
-          $dir = 'c:\hostedtoolcache\windows\Python\3.14.4'
+          $dir = 'c:\hostedtoolcache\windows\Python\3.14.8'
           if (Test-Path $dir) {
             Remove-Item -Recurse -Force $dir
           }
@@ -82,14 +82,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Uninstall Python 3.14.4 arm64
+      - name: Uninstall Python 3.14.8 arm64
         shell: pwsh
         run: |
-          $exe = 'c:\hostedtoolcache\windows\Python\3.14.4\arm64\python-3.14.4-arm64.exe'
+          $exe = 'c:\hostedtoolcache\windows\Python\3.14.8\arm64\python-3.14.8-arm64.exe'
           if (Test-Path $exe) {
             Start-Process -FilePath $exe -ArgumentList @('/uninstall', '/quiet') -Wait
           }
-          $dir = 'c:\hostedtoolcache\windows\Python\3.14.4'
+          $dir = 'c:\hostedtoolcache\windows\Python\3.14.8'
           if (Test-Path $dir) {
             Remove-Item -Recurse -Force $dir
           }
@@ -124,14 +124,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Uninstall Python 3.14.4 arm64
+      - name: Uninstall Python 3.14.8 arm64
         shell: pwsh
         run: |
-          $exe = 'c:\hostedtoolcache\windows\Python\3.14.4\arm64\python-3.14.4-arm64.exe'
+          $exe = 'c:\hostedtoolcache\windows\Python\3.14.8\arm64\python-3.14.8-arm64.exe'
           if (Test-Path $exe) {
             Start-Process -FilePath $exe -ArgumentList @('/uninstall', '/quiet') -Wait
           }
-          $dir = 'c:\hostedtoolcache\windows\Python\3.14.4'
+          $dir = 'c:\hostedtoolcache\windows\Python\3.14.8'
           if (Test-Path $dir) {
             Remove-Item -Recurse -Force $dir
           }
@@ -178,14 +178,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Uninstall Python 3.14.4 arm64
+      - name: Uninstall Python 3.14.8 arm64
         shell: pwsh
         run: |
-          $exe = 'c:\hostedtoolcache\windows\Python\3.14.4\arm64\python-3.14.4-arm64.exe'
+          $exe = 'c:\hostedtoolcache\windows\Python\3.14.8\arm64\python-3.14.8-arm64.exe'
           if (Test-Path $exe) {
             Start-Process -FilePath $exe -ArgumentList @('/uninstall', '/quiet') -Wait
           }
-          $dir = 'c:\hostedtoolcache\windows\Python\3.14.4'
+          $dir = 'c:\hostedtoolcache\windows\Python\3.14.8'
           if (Test-Path $dir) {
             Remove-Item -Recurse -Force $dir
           }

@@ -4,36 +4,32 @@ on:
   workflow_dispatch:
 
 jobs:
-  # windows-pip-test:
-  #   runs-on: ${{ matrix.os }}
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       os: [windows-latest, ubuntu-latest, macos-latest, macos-13,'windows-11-arm','ubuntu-24.04-arm','ubuntu-22.04-arm']
-  #       python-version: ['pypy3.11','3.11','graalpy-24.2.1']
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Set up Python
-  #       uses: priyagupta108/setup-python/@pip-version-input  # local action with the new pip-version logic
-  #       with:
-  #         python-version: '${{ matrix.python-version }}'
-  #         pip-version: '23.3.1'
-  #     - name: Check pip version
-  #       run: python -m pip --version
 
-  windows-pip-test1:
+  python-pip-dependencies-caching:
+    name: Test pip (Python ${{ matrix.python-version}}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest]
-        python-version: [3.11]
+        os:
+          [
+            ubuntu-22.04,
+            ubuntu-latest,
+            ubuntu-24.04-arm,
+            windows-latest,
+            windows-11-arm,
+            macos-15-intel,
+            macos-latest
+          ]
+        python-version:
+          ['3.15']
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: priyagupta108/setup-python/@pip-version-input  # local action with the new pip-version logic
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Setup Python
+        uses: ./
         with:
-          python-version: '${{ matrix.python-version }}'
-          pip-version: '23.3.1 && echo upgrade'
-      - name: Check pip version
-        run: python -m pip --version
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+      - name: Install dependencies
+        run: pip install numpy pandas requests

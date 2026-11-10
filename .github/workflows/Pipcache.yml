@@ -88,7 +88,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
-          pip-version: '26'
+          pip-version: '26.2.2'
       - name: Install dependencies
         run: pip install numpy pandas requests
 

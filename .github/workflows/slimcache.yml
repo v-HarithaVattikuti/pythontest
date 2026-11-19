@@ -1,0 +1,24 @@
+name: Test slim cache
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cachetest:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-slim,ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v7
+      - name: Identify runner image
+        shell: bash
+        run: |
+          echo "ImageOS: $ImageOS"
+          echo "ImageVersion: $ImageVersion"
+          echo "RUNNER_OS: $RUNNER_OS"
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15.2'
+          cache: true
